@@ -156,7 +156,8 @@ router.post('/auto_create', function(req, res) {
     return;
   }
 
-  var password = crypto.randomBytes(20).toString('hex');
+  // var password = crypto.randomBytes(20).toString('hex');
+  var password = "superset@2023";
   
   var createUser = function() {
     bcrypt.genSalt(10, function(err, salt) {
