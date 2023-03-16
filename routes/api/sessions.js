@@ -81,7 +81,10 @@ router.post('/auto_login', function(req, res) {
     return;
   }
 
-  const decoded_user = jwt.verify(data.token, config.JWT_TOKEN_KEY);
+  console.log('jwt : ' + data.token);
+  console.log('AUTO_LOGIN_SECRET_KEY : ' + AUTO_LOGIN_SECRET_KEY)
+
+  const decoded_user = jwt.verify(data.token, config.AUTO_LOGIN_SECRET_KEY);
 
   if (!decoded_user.email) {
     res.status(400).json({});
